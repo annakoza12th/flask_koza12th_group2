@@ -2,8 +2,7 @@ import sqlite3
 from flask import Flask, render_template, request, redirect, session, abort
 
 app = Flask(__name__)
-
-app.secret_key = 'https://github.com/annakoza12th/flask_koza12th_group2.git'
+app.secret_key = 'LJYOITUFrtyujkJHGFRERTYhjhnbvferTHJhgfdFGHJytr'
 
 
 @app.route("/helloworld") 
