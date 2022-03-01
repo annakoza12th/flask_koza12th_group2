@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>会員登録</h1>
+<h1>新規登録</h1>
 
 <form action="/register" method="post">
-    ユーザ名：
-    <input type="text" name="name" size="100" maxlength="100">
-    パスワード：
-    <input type="password" name="password" size="100" maxlength="100">
-    <input type="submit" name="save" value="登録">
+    User Name：
+    <input type="text" name="name" size="50" maxlength="50">
+    PassWord：
+    <input type="password" name="password" size="50" maxlength="50">
+    <input type="submit" name="save" value="新規登録">
 </form>
 
 {% endblock %}
