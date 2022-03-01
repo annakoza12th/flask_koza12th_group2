@@ -1,0 +1,74 @@
+@charset "UTF-8";
+html {
+	overflow-y: scroll;
+}
+body, h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 40px;
+}
+body, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: darkorange;
+	text-align: center;
+	font-size: 15px;
+	line-height: 1.4;
+	min-width: 100%;
+	-webkit-textsize-adjust: 100%;
+	color: white;
+}
+
+.Yasai img {
+	width: 1000px;
+	height: 380px;
+	vertical-align: center;
+	margin: 30px;
+	padding: 30px;
+	padding-bottom: 0px;
+	margin-bottom:0px;
+	margin-top:7px;
+	padding-top:7px;
+
+		
+}
+body {
+	font-family:  "ＭＳ Ｐゴシック";
+}
+
+footer img {
+
+	width: 100%;
+	height: 80px;
+	object-fit: none;
+
+ }
+
+ title {
+	margin-top: 0;
+ }
+ .btn {
+
+	border-radius: 5px;
+	background-color: red;
+	padding: 0px;
+	text-decoration:inherit;
+	color: white;
+	border:1px solid pink;
+    height: 15px;
+    width:  100px;  
+	padding:  5px;
+	margin: 5px;
+	float: right;
+	text-align: center;
+
+}
+.memo {
+	text-align: left;
+	margin-left: 4.5cm;
+	margin-right: 4.5cm;
+}
+
+  
