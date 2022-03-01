@@ -5,10 +5,14 @@ app = Flask(__name__)
 app.secret_key = 'LJYOITUFrtyujkJHGFRERTYhjhnbvferTHJhgfdFGHJytr'
 
 
+@app.route("/")
+def top():
+    return render_template('index.html')
+
+
 @app.route("/login") 
 def login():
     return render_template('login.html')
-
 
 
 @app.route('/register')
@@ -29,7 +33,9 @@ def register_post():
 
 
 
-
+@app.route('/list')
+def list():
+    return render_template('lists.html')
 
 
 
