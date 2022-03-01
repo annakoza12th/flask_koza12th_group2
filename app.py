@@ -10,7 +10,6 @@ def login():
     return render_template('login.html')
 
 
-
 @app.route('/register')
 def register_get():
     return render_template('register.html')
@@ -29,7 +28,9 @@ def register_post():
 
 
 
-
+@app.route('/list')
+def list():
+    return render_template('lists.html')
 
 
 
