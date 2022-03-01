@@ -5,6 +5,11 @@ app = Flask(__name__)
 app.secret_key = 'LJYOITUFrtyujkJHGFRERTYhjhnbvferTHJhgfdFGHJytr'
 
 
+@app.route("/")
+def top():
+    return render_template('index.html')
+
+
 @app.route("/login") 
 def login():
     return render_template('login.html')
