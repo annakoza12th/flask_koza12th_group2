@@ -34,10 +34,16 @@ def register_post():
 
 
 @app.route('/list')
-def list():
-    return render_template('lists.html')
-
-
+def food_list():
+    conn = sqlite3.connect("food_tracking.db")
+    c = conn.cursor()
+    c.execute("SELECT * from lists;")
+    food_lists = []
+    for row in c.fetchall():
+        food_lists.append({"check":row[5], "id":row[0], "date":row[1], "food":row[2], "category":row[3], "stock":row[4]})
+    print(food_lists)
+    c.close
+    return render_template('lists.html', food_lists=food_lists)
 
 
 
