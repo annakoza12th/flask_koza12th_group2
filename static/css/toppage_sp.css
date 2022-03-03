@@ -2,47 +2,42 @@
 html {
 	overflow-y: scroll;
 }
-body, h1 {
-	margin: 0px;
-	padding: 0px;
-	font-size: 40px;
-}
-body, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd {
-	margin: 0px;
-	padding: 0px;
-}
+
 body {
 	background-color: darkorange;
 	text-align: center;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 1.4;
 	min-width: 100%;
 	-webkit-textsize-adjust: 100%;
 	color: white;
+	font-family:  "ＭＳ Ｐゴシック";
 }
 
 .Yasai img {
-	width: 1000px;
-	height: 380px;
+	width: 800px;
+	height: 370px;
 	vertical-align: center;
-	margin: 30px;
-	padding: 30px;
+	margin-right: 8cm;
+	margin-left: 9cm;
+	padding: 5px;
 	padding-bottom: 0px;
 	margin-bottom:0px;
-	margin-top:7px;
-	padding-top:7px;
+	margin-top:0px;
+	padding-top:0px;
+	margin-left:215px;
 
 		
-}
-body {
-	font-family:  "ＭＳ Ｐゴシック";
 }
 
 footer img {
 
-	width: 100%;
+	width: 600px;
 	height: 80px;
-	object-fit: none;
+	margin-top:0cm;
+	margin-left:7cm;
+	margin-right:8cm;
+	border-radius: 10px 20px /10px 25px 30px 20px
 
  }
 
@@ -60,15 +55,21 @@ footer img {
     height: 15px;
     width:  100px;  
 	padding:  5px;
-	margin: 5px;
+	margin-top: -0.5cm;
+	margin-right:0.5cm;
+	margin: left 0.5cm;
 	float: right;
 	text-align: center;
 
 }
 .memo {
 	text-align: left;
-	margin-left: 4.5cm;
-	margin-right: 4.5cm;
+	margin-left: 6.5cm;
+	margin-right: 8cm;
 }
 
-  
+p.footer {
+	border-bottom: 5px dotted #e3fc09;	
+	
+ }
+
