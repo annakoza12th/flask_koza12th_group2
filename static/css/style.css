@@ -22,7 +22,7 @@ body {
       font-size: 10px;
   }
   
-  form input[type = "id"],form input[type = "password"] {
+  form input {
       border: 0;
       background: none;
       display: block;
@@ -54,3 +54,4 @@ body {
     background-color: hsl(125, 87%, 50%);
     border: 2px solid #e0d6d9;  
   }
+
