@@ -24,7 +24,7 @@ def register_get():
 def register_post():
     name = request.form.get('name')
     password = request.form.get('password')
-    conn = sqlite3.connect('flask_test.db')
+    conn = sqlite3.connect('2022_03_03.db')
     c = conn.cursor()
     c.execute("INSERT INTO users VALUES(null,?,?)", (name, password))
     conn.commit()
