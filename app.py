@@ -1,3 +1,5 @@
+from crypt import methods
+from operator import methodcaller
 import sqlite3
 import datetime
 from flask import Flask, render_template, request, redirect, session, abort
@@ -42,7 +44,7 @@ def food_list():
     food_lists = []
     for row in c.fetchall():
         food_lists.append({"id":row[0], "date":row[1], "food":row[2], "category":row[3], "stock":row[4], "priority":row[5], "check":row[6]})
-    print(food_lists)
+    # print(food_lists)
     c.close
     return render_template('lists.html', food_lists=food_lists)
 
@@ -59,19 +61,26 @@ def food_post():
     dt_now = datetime.datetime.now()
     date = dt_now.strftime('%Y/%m/%d')
     check = 1
+    user_id = 1
     conn = sqlite3.connect('2022_03_03.db')
     c = conn.cursor()
-    c.execute("INSERT INTO lists VALUES(null,?,?,?,?,?,?)", (date, food, category, priority, stock, check))
+    c.execute("INSERT INTO lists VALUES(null,?,?,?,?,?,?,?)", (date, food, category, priority, stock, check, user_id,))
     conn.commit()
     conn.close()
-    
-    # flash('食材が追加されました', category='alert alert-info')
-    return redirect('/list')
     
     # Todo：ユーザーID 追加、DB にも外部キーで追加必須
     # user_id = session.get('user_id')
 
+    return redirect('/list')
+    
+@app.route('/list_del/<int:id>/', methods=['POST'])
+def food_del(id):
+    print(id)
+    conn = sqlite3.connect('2022_03_03.db')
+    c = conn.cursor()
+    c.execute("DELETE FROM lists WHERE id = ?", (id,))
 
+    return redirect('/list')
 
 @app.errorhandler(404)
 def notfound(code):

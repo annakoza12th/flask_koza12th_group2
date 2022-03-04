@@ -8,9 +8,8 @@
             <h1>食材 Lists</h1>
 
             <div class="list-btn">
-                <a href="#" class="btn btn-border-shadow btn-border-shadow--radius">削除</a> 
-                <!-- <form action="/register" method="post"></form> -->
-                <a href="list_register" class="btn btn-border-shadow-regist btn-border-shadow--radius">登録</a> 
+                <a href="/list_register_del" class="btn btn-border-shadow btn-border-shadow--radius">削除</a> 
+                <a href="/list_register" class="btn btn-border-shadow-regist btn-border-shadow--radius">登録</a> 
             </div>
         </div>
 
@@ -31,7 +30,23 @@
                 <tbody>
                     {% for item in food_lists %}
                     <tr>
-                        <td>{{item.check}}</td>
+                        <!-- <td><a href="/list_del/{{item.id}}">削除</a></td> -->
+                        <!-- <td><a href="/list_del/{{item.id}}" onclick="sendPost(event)">削除</a></td> -->
+                        <!-- <td>
+                            <form method="post" name="form1" action="/list_del/{{item.id}}">
+                                <input type="hidden" name="id" value="id">
+                                <a href="javascript:form1.submit()">削除</a>
+                            </form>
+                        </td> -->
+
+                        
+                        <!-- <td>
+                            <form action="/list_del/{{item.id}}" method="post"></form>
+                            <input type="hidden" name="id">
+                            <a href="javascript:form_1.submit()">削除</a>
+                        </td> -->
+                        <td><input type="checkbox" name="check" id="ck" value="{{item.id}}"></td>
+                        <!-- <td>{{item.check}}</td> -->
                         <td>{{item.id}}</td>
                         <td>{{item.date}}</td>
                         <td>{{item.food}}</td>
@@ -45,5 +60,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock %}
