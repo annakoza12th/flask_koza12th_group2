@@ -1,4 +1,5 @@
 import sqlite3
+import datetime
 from flask import Flask, render_template, request, redirect, session, abort
 
 app = Flask(__name__)
@@ -35,15 +36,40 @@ def register_post():
 
 @app.route('/list')
 def food_list():
-    conn = sqlite3.connect("food_tracking.db")
+    conn = sqlite3.connect("2022_03_03.db")
     c = conn.cursor()
     c.execute("SELECT * from lists;")
     food_lists = []
     for row in c.fetchall():
-        food_lists.append({"check":row[5], "id":row[0], "date":row[1], "food":row[2], "category":row[3], "stock":row[4]})
+        food_lists.append({"id":row[0], "date":row[1], "food":row[2], "category":row[3], "stock":row[4], "priority":row[5], "check":row[6]})
     print(food_lists)
     c.close
     return render_template('lists.html', food_lists=food_lists)
+
+@app.route('/list_register')
+def list_register():
+    return render_template('/list_register.html')
+
+@app.route('/list_register', methods=['POST'])
+def food_post():
+    food = request.form.get('food')
+    category = request.form.get('category')
+    priority = request.form.get('priority')
+    stock = request.form.get('stock')
+    dt_now = datetime.datetime.now()
+    date = dt_now.strftime('%Y/%m/%d')
+    check = 1
+    conn = sqlite3.connect('2022_03_03.db')
+    c = conn.cursor()
+    c.execute("INSERT INTO lists VALUES(null,?,?,?,?,?,?)", (date, food, category, priority, stock, check))
+    conn.commit()
+    conn.close()
+    
+    # flash('食材が追加されました', category='alert alert-info')
+    return redirect('/list')
+    
+    # Todo：ユーザーID 追加、DB にも外部キーで追加必須
+    # user_id = session.get('user_id')
 
 
 
