@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -7,8 +7,11 @@
         <div class="food-header">
             <h1>食材 Lists</h1>
 
-            <a href="#" class="btn">削除</a> 
-            <a href="#" class="btn">登録</a> 
+            <div class="list-btn">
+                <a href="#" class="btn btn-border-shadow btn-border-shadow--radius">削除</a> 
+                <!-- <form action="/register" method="post"></form> -->
+                <a href="list_register" class="btn btn-border-shadow-regist btn-border-shadow--radius">登録</a> 
+            </div>
         </div>
 
         <div class="container">
@@ -16,11 +19,12 @@
                 <thead>
                     <tr>
                         <th>check</th>
-                        <th>date</th>
-                        <th>food</th>
-                        <th>category</th>
-                        <th>priority</th>
-                        <th>stock</th>
+                        <th>ID</th>
+                        <th>登録日</th>
+                        <th>食材名</th>
+                        <th>カテゴリー</th>
+                        <th>優先度</th>
+                        <th>在庫</th>
                     </tr>
                 </thead>
 
@@ -28,10 +32,11 @@
                     {% for item in food_lists %}
                     <tr>
                         <td>{{item.check}}</td>
+                        <td>{{item.id}}</td>
                         <td>{{item.date}}</td>
                         <td>{{item.food}}</td>
                         <td>{{item.category}}</td>
-                        <td>priority</td>
+                        <td>{{item.priority}}</td>
                         <td>{{item.stock}}</td>
                     </tr>
                     {% endfor %}
