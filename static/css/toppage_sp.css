@@ -4,13 +4,15 @@ html {
 }
 
 body {
-	background-color: darkorange;
+	/* background-color: darkorange; */
+	background-color: rgba(238, 231, 173, 0.836);
 	text-align: center;
 	font-size: 13px;
 	line-height: 1.4;
 	min-width: 100%;
 	-webkit-textsize-adjust: 100%;
-	color: white;
+	/* color: white; */
+	color: darkorange;
 	font-family:  "ＭＳ Ｐゴシック";
 }
 
@@ -47,10 +49,12 @@ footer img {
  .btn {
 
 	border-radius: 5px;
-	background-color: red;
+	background-color: rgb(243, 195, 38);
+	/* background-color: red; */
 	padding: 0px;
 	text-decoration:inherit;
-	color: white;
+	/* color: white; */
+	color: black;
 	border:1px solid pink;
     height: 15px;
     width:  100px;  
